@@ -9,6 +9,7 @@ export default function ScrollToTop() {
       position={"fixed"}
       right={50}
       bottom={50}
+      zIndex={1}
       sx={{
         borderRadius: "100%",
         padding: "4px",

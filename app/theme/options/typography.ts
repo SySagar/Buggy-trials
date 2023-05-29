@@ -25,7 +25,9 @@ const typographyOptions : TypographyOptions = {
 	h6: {
 		fontWeight: 800
 	},
-   
+    button: {
+		fontWeight: 400
+	},
 }
 
 export default typographyOptions;

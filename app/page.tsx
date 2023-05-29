@@ -1,16 +1,9 @@
-'use client'
-import RootLayout from "./layout/RootLayout";
-import HomeScreen from "@homePage/components/HomeScreen";
-import AppTheme from "./theme/appTheme";
-import ScrollToTop from "common/ScrollToTop";
+import HomeScreen from "./Home/components/HomeScreen";
 
 export default function page() {
   return (
-    <AppTheme>
-    <RootLayout>
-      <ScrollToTop/>
+      <div>
       <HomeScreen/>
-    </RootLayout>
-    </AppTheme>
+      </div>
   );
 }

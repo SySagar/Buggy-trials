@@ -1,3 +1,4 @@
+'use client'
 import { Button, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
@@ -6,9 +7,9 @@ export default function Footer() {
   return (
     <Stack
       className="footer"
+      position={"sticky"}
       padding={3}
       sx={{ backgroundColor: " #e0e0eb" }}
-      direction={"row"}
     >
       <Stack
         className="footer-container"

@@ -1,3 +1,4 @@
+'use client'
 import { Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import { User } from "@svg/index";
@@ -8,6 +9,7 @@ export default function Header() {
   return (
     <Stack
       className="header"
+      position={"sticky"}
       padding={3}
       border={"1px"}
       sx={{ borderColor: "grey", backgroundColor: " #e0e0eb" }}
@@ -32,7 +34,7 @@ export default function Header() {
           direction={"row"}
           alignItems={"center"}
         >
-          <Button>Home</Button>
+          <Button sx={{fontweight:'800'}}>Home</Button>
 
           <Button>Contest</Button>
 
