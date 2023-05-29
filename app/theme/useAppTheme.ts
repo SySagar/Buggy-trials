@@ -1,5 +1,6 @@
 import { ThemeOptions, createTheme, responsiveFontSizes } from '@mui/material'
 import typographyOptions from './options/typography'
+import paletteOptions from './options/palette'
 
 const obj = {
 	MuiButton: {
@@ -13,7 +14,8 @@ const obj = {
 
 const useAppTheme = () => {
 	const themeOptions: ThemeOptions = {
-		typography: typographyOptions
+		typography: typographyOptions,
+		palette: paletteOptions,
 	}
 
 	const theme = createTheme(themeOptions)

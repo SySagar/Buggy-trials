@@ -1,0 +1,26 @@
+import { Button, Stack, Typography } from "@mui/material";
+import Link from "next/link";
+import React from "react";
+
+export default function Footer() {
+  return (
+    <Stack
+      className="footer"
+      padding={3}
+      sx={{ backgroundColor: " #e0e0eb" }}
+      direction={"row"}
+    >
+      <Stack
+        className="footer-container"
+        width={"100%"}
+        direction={"row"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Typography>
+          Made with ❤️ by <Link href="https://github.com/SySagar">SySagar</Link>
+        </Typography>
+      </Stack>
+    </Stack>
+  );
+}

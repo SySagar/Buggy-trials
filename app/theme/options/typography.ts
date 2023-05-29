@@ -2,9 +2,11 @@ import { TypographyOptions } from '@mui/material/styles/createTypography'
 
 const typographyOptions : TypographyOptions = {
     fontFamily: [
-        'Pathway Extreme',
+        'Raleway',
     ].join(','),
     fontWeightRegular: 400,
+	fontWeightMedium: 500,
+	fontWeightBold: 700,
     h1: {
 		fontWeight: 700
 	},

@@ -10,6 +10,7 @@ html {
 
 body {
 	min-height: 100vh;
+	overflow-x: hidden;
 }
 
 @font-face {
@@ -20,8 +21,8 @@ body {
   }
 	
   @font-face {
-	font-family: "PathwayExtreme";
-	src: url('./fonts/PathwayExtreme.ttf');
+	font-family: "Raleway";
+	src: url('./fonts/Raleway.ttf');
 	font-weight: normal;
 	font-style: normal;
   }
