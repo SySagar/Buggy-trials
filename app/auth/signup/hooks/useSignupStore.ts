@@ -14,8 +14,7 @@ interface User {
 interface Profile {
 	name: string
 	username: string
-	bio?: string
-	twitter_username: string
+	githubId: string
 }
 
 const steps: Step[] = [
@@ -58,9 +57,8 @@ const useSignUpStore = create<SignupStore>()((set, get) => ({
 	},
 	profile: {
 		name: '',
-		twitter_username: '',
 		username: '',
-		bio: ''
+		githubId: ''
 	},
 	setUser: (u) => set({ user: u }),
 	setProfile: (p) => set({ profile: p })

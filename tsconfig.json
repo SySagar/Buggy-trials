@@ -22,9 +22,9 @@
       }
     ],
     "paths": {
-      "@homePage/*": ["pages/Home/*"],
       "@svg/*": ["assets/svg/*"],
       "@png/*": ["assets/png/*"],
+      "@layout/*": ["layout/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
