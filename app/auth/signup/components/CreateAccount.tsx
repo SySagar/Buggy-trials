@@ -10,7 +10,9 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import React from "react";
-import { Check, Visibility, VisibilityOff } from "@mui/icons-material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { userSchema } from "../models/userSchema";
+import { toFormikValidationSchema } from "zod-formik-adapter";
 import { useFormik } from "formik";
 import useSignUpStore from "../hooks/useSignupStore";
 import MotionWrapper from "./MotionWrapper";
@@ -36,7 +38,6 @@ export default function CreateAccount() {
     initialValues: {
       email: user!.email,
       password: user!.password,
-      otp: "",
     },
     onSubmit: async (values) => {
       const { email, password } = values;
@@ -47,7 +48,7 @@ export default function CreateAccount() {
       console.log("step 1 done");
       setActiveStep(1);
     },
-    //validationSchema: validationSchema
+    validationSchema: toFormikValidationSchema(userSchema),
   });
 
   const togglePasswordVisibility = () => {

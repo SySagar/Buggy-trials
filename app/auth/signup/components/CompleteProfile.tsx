@@ -10,6 +10,8 @@ import {
 import MotionWrapper from "./MotionWrapper";
 import { ArrowBack } from "@mui/icons-material";
 import { useFormik } from "formik";
+import { userProfileSchema } from "../models/userSchema";
+import { toFormikValidationSchema } from "zod-formik-adapter";
 import React, { useState } from "react";
 import useSignUpStore from "../hooks/useSignupStore";
 
@@ -42,6 +44,7 @@ export default function CompleteProfile() {
         setIsLoading((v) => false);
       }
     },
+    validationSchema: toFormikValidationSchema(userProfileSchema),
   });
 
   return (
@@ -91,15 +94,15 @@ export default function CompleteProfile() {
             required
           />
           <TextField
-            name="github-username"
-            label="Github Profile"
-            value={formik.values.username}
+            name="githubId"
+            label="Github Url"
+            value={formik.values.githubId}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={
-              formik.touched.username && formik.errors.username ? true : false
+              formik.touched.githubId && formik.errors.githubId ? true : false
             }
-            helperText={formik.errors.username}
+            helperText={formik.errors.githubId}
             required
           />
         </Stack>
