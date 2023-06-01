@@ -22,9 +22,8 @@
       }
     ],
     "paths": {
-      "@svg/*": ["assets/svg/*"],
-      "@png/*": ["assets/png/*"],
       "@layout/*": ["layout/*"],
+      "@lib/*": ["lib/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

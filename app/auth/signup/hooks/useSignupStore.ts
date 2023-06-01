@@ -1,21 +1,5 @@
 import { create } from 'zustand'
-
-interface Step{
-	label: string
-	isComplete: boolean
-}
-
-interface User {
-	email: string
-	password: string
-}
-
-
-interface Profile {
-	name: string
-	username: string
-	githubId: string
-}
+import {SignupStore,Step} from '../types/signupTypes'
 
 const steps: Step[] = [
 	{
@@ -33,15 +17,6 @@ const steps: Step[] = [
 	
 ]
 
-interface SignupStore {
-	activeStep: number
-	setActiveStep: (by: number) => void
-	steps: Step[]
-	user: User | undefined
-	profile: Profile
-	setUser: (u: User) => void
-	setProfile: (p: Profile) => void
-}
 
 const useSignUpStore = create<SignupStore>()((set, get) => ({
 	activeStep: 0,

@@ -14,6 +14,7 @@ import { userProfileSchema } from "../models/userSchema";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import React, { useState } from "react";
 import useSignUpStore from "../hooks/useSignupStore";
+import {APIMethods} from "@lib/axios/api"
 
 export default function CompleteProfile() {
   const [error, setError] = useState("");
@@ -33,9 +34,15 @@ export default function CompleteProfile() {
     },
     onSubmit: async (values) => {
       setProfile(values);
+      let data = {
+				email: user!.email,
+				password: user!.password,
+				profile: values
+			}
       setIsLoading((v) => true);
       try {
-        //data store in db
+        // console.log(data)
+        await APIMethods.auth.signUp(data)
         setActiveStep(1);
       } catch (err: any) {
         console.error(err);

@@ -1,8 +1,6 @@
 'use client'
 import { Button, Stack, Typography } from "@mui/material";
 import React from "react";
-import { User } from "@svg/index";
-import { logo } from "@png/index";
 import Image from "next/image";
 
 export default function Header() {
@@ -18,7 +16,7 @@ export default function Header() {
       <Stack className="header-container" width={"100%"} direction={"row"}>
         <Stack direction={"row"} alignItems={"center"} gap={1}>
           <Image
-            src={logo}
+            src={'/assets/png/logo.png'}
             width={50}
             height={50}
             alt="Picture of the author"
@@ -42,7 +40,7 @@ export default function Header() {
 
           <Image
             className="user"
-            src={User}
+            src={'/assets/svg/user.svg'}
             width={30}
             height={30}
             alt="Picture of the author"
