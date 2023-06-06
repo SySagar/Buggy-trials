@@ -10,7 +10,7 @@ export default function Header() {
       position={"sticky"}
       padding={3}
       border={"1px"}
-      sx={{ borderColor: "grey", backgroundColor: " #e0e0eb" }}
+      sx={{ borderColor: "grey", backgroundColor: "#FBF8F2" }}
       direction={"row"}
     >
       <Stack className="header-container" width={"100%"} direction={"row"}>

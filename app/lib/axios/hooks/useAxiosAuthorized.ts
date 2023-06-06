@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { AuthorizedAPIInstance } from "../api";
 import refresh  from "./useRefreshToken";
+import Cookies from "js-cookie";
 
 const useAxiosAuthorized = () => {
   useEffect(() => {
    const requestIntercept =  AuthorizedAPIInstance.interceptors.request.use((config: any) => {
-      config.headers.Authorization = localStorage.getItem("accessToken");
+      config.headers.Authorization = Cookies.get('accessToken');
       return config;
     });
 

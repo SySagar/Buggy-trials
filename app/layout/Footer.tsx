@@ -9,7 +9,7 @@ export default function Footer() {
       className="footer"
       position={"sticky"}
       padding={3}
-      sx={{ backgroundColor: " #e0e0eb" }}
+      sx={{ backgroundColor: "#FBF8F2" }}
     >
       <Stack
         className="footer-container"

@@ -35,7 +35,7 @@ export default function CompleteProfile() {
     onSubmit: async (values) => {
       setProfile(values);
       let data = {
-				email: user!.email,
+				userEmail: user!.email,
 				password: user!.password,
 				profile: values
 			}

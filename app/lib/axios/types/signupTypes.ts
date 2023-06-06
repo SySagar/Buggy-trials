@@ -1,5 +1,5 @@
 export default interface CreateUserData{
-	email: string
+	userEmail: string
 	password: string
 	profile: {
 		username: string

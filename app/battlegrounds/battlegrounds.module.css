@@ -1,0 +1,14 @@
+.codeEditor{
+    min-height: 600px;
+}
+
+.question_box_inner{
+    background-color: #263238;
+    min-width: 600px;
+    min-height: 600px;
+}
+
+.sidebar{
+    background-color: #f4e8df;
+    box-shadow: 0 0 10px 1px #000;
+}

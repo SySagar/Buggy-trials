@@ -7,6 +7,7 @@ import { userSchema } from '../models/userSchema'
 import { toFormikValidationSchema } from 'zod-formik-adapter'
 import { VisibilityOff, Visibility } from "@mui/icons-material"
 import Link from 'next/link'
+import Cookies from 'js-cookie'
 import {APIMethods} from '@lib/axios/api'
 import {
     Alert,
@@ -42,6 +43,10 @@ export default function LoginForm() {
                 const res = await APIMethods.auth.login({email,
 					password})
 				localStorage.setItem('accessToken', accessToken)
+				Cookies.set('accessToken', accessToken, {
+					expires: 7
+				})
+				console.log(Cookies.get('accessToken'))
 
 				// const user = (await APIMethods.auth.verify()).data
 				// setCurrentUser(user)
