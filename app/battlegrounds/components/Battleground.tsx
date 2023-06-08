@@ -5,26 +5,36 @@ import Sidebar from "./Sidebar";
 import QuestionBox from "./QuestionBox";
 import React from "react";
 import SinglePage from "@layout/SinglePage";
+import Timer from "./Timer";
+import useEndTime from "battlegrounds/hooks/useEndTime";
+import EndModal from "./EndModal";
 
 export default function Battlegrounds() {
+  const [active] = useEndTime((state: any) => [state.active]);
+
   return (
-    <SinglePage>
-      <Stack direction={"row"} >
-        <Sidebar />
+    <Stack direction={"row"} position={"relative"}>
+      {active && <EndModal />}
+      <Sidebar />
+      <Stack minWidth={"21rem"}></Stack>
+      <SinglePage>
         <Stack
           className="qna-outer"
           direction={"column"}
+          position={"relative"}
           gap={10}
-          padding={7}
-          marginLeft={"20rem"}
+          marginY={8}
+          marginTop={"10vh"}
           justifyContent={"center"}
           alignItems={"center"}
-          flexGrow={1}
+          overflow={"hidden"}
         >
+          <Timer></Timer>
+
           <QuestionBox />
           <CodeEditor />
         </Stack>
-      </Stack>
-    </SinglePage>
+      </SinglePage>
+    </Stack>
   );
 }

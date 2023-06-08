@@ -1,14 +1,36 @@
-.codeEditor{
-    min-height: 600px;
+.codeEditor {
+  min-height: 600px;
 }
 
-.question_box_inner{
-    background-color: #263238;
-    min-width: 600px;
-    min-height: 600px;
+.question_box_inner {
+  background-color: #263238;
+  min-width: 600px;
+  min-height: 600px;
 }
 
-.sidebar{
-    background-color: #f4e8df;
-    box-shadow: 0 0 10px 1px #000;
+.sidebar {
+  background-color: #f4e8df;
+  box-shadow: 0 0 2px 1px #aba99a;
+}
+
+.players {
+  display: grid;
+  grid-template-columns: 5rem 5rem 5rem;
+}
+
+.options {
+  padding-inline: 10px;
+  padding-block: 6px;
+}
+
+.editor_inner_container {
+  border: 4px solid #95a9a6;
+  border-radius: 5px;
+  padding: 7px;
+}
+
+.fixed_wrapper {
+  position: absolute;
+  top: 0;
+  left: -240px;
 }
