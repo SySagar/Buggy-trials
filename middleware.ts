@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from 'next/server';
 import { useRouter } from 'next/router';
 import { APIMethods } from "@lib/axios/api";
-import useFullScreenStore from "@lib/context/useFullScreenStore"
 
 export default async function middleware(req: NextRequest){
     // let token = req.cookies.get("accessToken");
