@@ -6,7 +6,7 @@ import QuestionBox from "./QuestionBox";
 import React from "react";
 import SinglePage from "@layout/SinglePage";
 import Timer from "./Timer";
-import useEndTime from "battlegrounds/hooks/useEndTime";
+import useEndTime from "../hooks/useEndTime";
 import EndModal from "./EndModal";
 
 export default function Battlegrounds() {

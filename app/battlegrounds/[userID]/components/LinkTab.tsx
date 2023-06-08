@@ -1,7 +1,7 @@
 import { Tab } from "@mui/material";
 import React from "react";
 import qbStyles from "../battlegrounds.module.css";
-import LinkTabProps from "battlegrounds/types/linktypes";
+import LinkTabProps from "../types/linktypes";
 
 export default function LinkTab(props: LinkTabProps) {
   return (

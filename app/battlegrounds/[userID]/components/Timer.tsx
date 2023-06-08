@@ -3,7 +3,7 @@ import LinearProgress, {
   LinearProgressProps,
 } from "@mui/material/LinearProgress";
 import Box from "@mui/material/Box";
-import useEndTime from "battlegrounds/hooks/useEndTime";
+import useEndTime from "../hooks/useEndTime";
 
 function LinearProgressWithLabel(
   props: LinearProgressProps & { value: number } & { background: string }
@@ -31,24 +31,30 @@ function LinearProgressWithLabel(
 export default function Timer() {
   const [progress, setProgress] = React.useState(100);
   const [progressColor, setProgressColor] = React.useState("#fff");
-  const [end,setEnd] = React.useState(false)
-  const [active,battleEnded] = useEndTime((state:any) => [state.active,state.battleEnded])
+  const [end, setEnd] = React.useState(false);
+  const [active, battleEnded] = useEndTime((state: any) => [
+    state.active,
+    state.battleEnded,
+  ]);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-        if(progress>0)
-        setProgress(progress=>progress-1)
-        if(progress<=0)
-        {battleEnded(); clearInterval(timer); console.log(active)}
+      if (progress > 0) setProgress((progress) => progress - 1);
+      if (progress <= 0) {
+        battleEnded();
+        clearInterval(timer);
+        console.log(active);
+      }
 
-        if(progress<30)
-        {setProgressColor('#880808')}
+      if (progress < 30) {
+        setProgressColor("#880808");
+      }
 
-        console.log(progress)
-    //   setProgress((prevProgress) =>
-    //     prevProgress <= setEnd(true) ? 100 : prevProgress - 1
-    //   );
-    //   console.log(progress);
+      console.log(progress);
+      //   setProgress((prevProgress) =>
+      //     prevProgress <= setEnd(true) ? 100 : prevProgress - 1
+      //   );
+      //   console.log(progress);
     }, 200);
     return () => {
       clearInterval(timer);

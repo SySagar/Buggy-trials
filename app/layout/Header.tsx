@@ -1,9 +1,11 @@
-'use client'
+"use client";
 import { Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  const router = useRouter();
   return (
     <Stack
       className="header"
@@ -16,7 +18,7 @@ export default function Header() {
       <Stack className="header-container" width={"100%"} direction={"row"}>
         <Stack direction={"row"} alignItems={"center"} gap={1}>
           <Image
-            src={'/assets/png/logo.png'}
+            src={"/assets/png/logo.png"}
             width={50}
             height={50}
             alt="Picture of the author"
@@ -32,15 +34,17 @@ export default function Header() {
           direction={"row"}
           alignItems={"center"}
         >
-          <Button sx={{fontweight:'800'}}>Home</Button>
+          <Button onClick={() => router.push("/")} sx={{ fontweight: "800" }}>
+            Home
+          </Button>
 
-          <Button>Contest</Button>
+          <Button onClick={() => router.push("/dashboard")}>Contest</Button>
 
-          <Button>About</Button>
+          <Button onClick={() => router.push("/about")}>About</Button>
 
           <Image
             className="user"
-            src={'/assets/svg/user.svg'}
+            src={"/assets/svg/user.svg"}
             width={30}
             height={30}
             alt="Picture of the author"

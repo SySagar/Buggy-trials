@@ -1,10 +1,17 @@
-'use client'
-import React from 'react'
+"use client";
+import React from "react";
+import Dashboard from "./components/Dashboard";
+import { Stack } from "@mui/material";
+import SinglePage from "@layout/SinglePage";
 
 export default function page() {
   return (
-    <div>
-      Hello from dashboard
-    </div>
-  )
+    <SinglePage>
+      <Stack justifyContent={"center"} alignItems={"center"} padding={3}>
+        <Stack minWidth={"600px"}>
+          <Dashboard />
+        </Stack>
+      </Stack>
+    </SinglePage>
+  );
 }

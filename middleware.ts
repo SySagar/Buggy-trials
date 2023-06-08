@@ -10,29 +10,29 @@ export default async function middleware(req: NextRequest){
     const url = req.nextUrl.clone()
     let curURL = req.url
     
-    if(curURL.includes("/dashboard")){
+    // if(curURL.includes("/dashboard")){
       
-      try{
-        const res = await APIMethods.dashboard.dashboard()
-        console.log(res)
-        url.pathname = 'dashboard'
-        if(res.status === 200){
-          console.log("ok")
-          return NextResponse.rewrite(url);
-      }
-      else
-      {
-        url.pathname = 'auth/login'
-        console.log("not ok")
-        return NextResponse.redirect(url);
-      }
-      }
-      catch(err){
-        url.pathname = 'auth/login'
-        console.log(err)
-        return NextResponse.redirect(url);
-      }
-    }
+    //   try{
+    //     const res = await APIMethods.dashboard.dashboard()
+    //     console.log(res)
+    //     url.pathname = 'dashboard'
+    //     if(res.status === 200){
+    //       console.log("ok")
+    //       return NextResponse.rewrite(url);
+    //   }
+    //   else
+    //   {
+    //     url.pathname = 'auth/login'
+    //     console.log("not ok")
+    //     return NextResponse.redirect(url);
+    //   }
+    //   }
+    //   catch(err){
+    //     url.pathname = 'auth/login'
+    //     console.log(err)
+    //     return NextResponse.redirect(url);
+    //   }
+    // }
 
 
 

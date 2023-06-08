@@ -40,7 +40,6 @@ export default function QuestionBox() {
         {value === 0 && <Questions />}
         {value === 1 && <Solutions />}
         {value === 2 && <Discussions />}
-        
       </Card>
     </Stack>
   );

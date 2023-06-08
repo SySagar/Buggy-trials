@@ -168,7 +168,7 @@ export default function Sidebar() {
               <Avatar
                 sx={{ objectFit: "fill", width: "30px", height: "30px" }}
                 alt="test avatar"
-                src="./assets/png/copilot.png"
+                src="/assets/png/copilot.png"
               />
             }
             label=""
@@ -178,7 +178,7 @@ export default function Sidebar() {
               <Avatar
                 sx={{ objectFit: "fill", width: "30px", height: "30px" }}
                 alt="test avatar"
-                src="./assets/png/git.png"
+                src="/assets/png/git.png"
               />
             }
             label=""
