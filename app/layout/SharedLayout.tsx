@@ -5,14 +5,20 @@ import "../globals.css";
 import { Stack } from "@mui/material";
 import ScrollToTop from "common/ScrollToTop";
 import AppTheme from "theme/appTheme";
+import createEmotionCache from "../lib/utils/createEmotionCache";
+import { CacheProvider, EmotionCache } from "@emotion/react";
+
+const clientSideEmotionCache = createEmotionCache();
 
 export default function SharedLayout({
-  children,
+  children,emotionCache = clientSideEmotionCache
 }: {
   children: React.ReactNode;
+  emotionCache?: EmotionCache;
 }) {
   return (
     <html lang="en">
+      <CacheProvider value={emotionCache}>
       <AppTheme>
         <body>
           <Stack minHeight={"100vh"}>
@@ -25,6 +31,7 @@ export default function SharedLayout({
           </Stack>
         </body>
       </AppTheme>
+      </CacheProvider>
     </html>
   );
 }
