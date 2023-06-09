@@ -17,24 +17,26 @@ export default function Battlegrounds() {
       {active && <EndModal />}
       <Sidebar />
       <Stack minWidth={"21rem"}></Stack>
-      <SinglePage>
-        <Stack
-          className="qna-outer"
-          direction={"column"}
-          position={"relative"}
-          gap={10}
-          marginY={8}
-          marginTop={"10vh"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-        >
-          <Timer></Timer>
-
-          <QuestionBox />
-          <CodeEditor />
-        </Stack>
-      </SinglePage>
+      <Stack
+        className="qna-outer"
+        direction={"column"}
+        position={"relative"}
+        gap={10}
+        marginY={8}
+        marginTop={"10vh"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        overflow={"hidden"}
+        width={"100%"}
+      >
+        <Timer></Timer>
+        <SinglePage>
+          <Stack gap={10}>
+            <QuestionBox />
+            <CodeEditor />
+          </Stack>
+        </SinglePage>
+      </Stack>
     </Stack>
   );
 }
