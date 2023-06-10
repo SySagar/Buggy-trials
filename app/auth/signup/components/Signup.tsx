@@ -1,13 +1,14 @@
 import * as React from "react";
+import dynamic from 'next/dynamic'
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import useSignUpStore from "../hooks/useSignupStore";
 import { Stack } from "@mui/material";
-import CreateAccount from "./CreateAccount";
-import CompleteProfile from "./CompleteProfile";
-import NextSteps from "./NextSteps";
 import SinglePage from "@layout/SinglePage";
+const CreateAccount = dynamic(()=>import("./CreateAccount"))
+const CompleteProfile = dynamic(()=>import("./CompleteProfile"))
+const NextSteps = dynamic(()=>import("./NextSteps"))
 
 export default function Singup() {
   const [steps, activeStep, setActiveStep] = useSignUpStore((state) => [

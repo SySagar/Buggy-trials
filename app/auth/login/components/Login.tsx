@@ -1,6 +1,6 @@
 'use client'
 import LoginForm from "./LoginForm"
-import { Container, Stack, Typography } from "@mui/material"
+import { Container, Stack} from "@mui/material"
 import { NextPage } from "next"
 import SinglePage from "@layout/SinglePage"
 

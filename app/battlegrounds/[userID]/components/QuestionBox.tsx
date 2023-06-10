@@ -3,9 +3,10 @@ import React from "react";
 import qbStyles from "../battlegrounds.module.css";
 import ShareIcon from "@mui/icons-material/Share";
 import LinkTab from "./LinkTab";
-import Questions from "./Questions";
-import Solutions from "./Solutions";
-import Discussions from "./Discussions";
+import dynamic from "next/dynamic";
+const Questions = dynamic(() => import("./Questions"));
+const Solutions = dynamic(() => import("./Solutions"));
+const Discussions = dynamic(() => import("./Discussions"));
 
 export default function QuestionBox() {
   const [value, setValue] = React.useState(0);
