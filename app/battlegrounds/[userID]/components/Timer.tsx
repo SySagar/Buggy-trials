@@ -51,15 +51,11 @@ export default function Timer() {
       }
 
       console.log(progress);
-      //   setProgress((prevProgress) =>
-      //     prevProgress <= setEnd(true) ? 100 : prevProgress - 1
-      //   );
-      //   console.log(progress);
     }, 200);
     return () => {
       clearInterval(timer);
     };
-  }, [battleEnded, progress]);
+  }, [active, battleEnded, progress]);
 
   return (
     <Box sx={{ width: "100%" }}>

@@ -33,7 +33,16 @@ export default function Dashboard() {
     const id = uuidV4();
     setRoomId(id);
     formik.values.roomID = id;
-    toast.success("Created a new room");
+    toast.success("Created a new room", {
+      style: {
+        padding: '16px',
+        color: '#0D0D0D',
+      },
+      iconTheme: {
+        primary: 'green',
+        secondary: '#FFFAEE',
+      },
+    });
   };
 
   const router = useRouter();

@@ -3,14 +3,29 @@ import { Stack } from "@mui/material";
 import CodeEditor from "./CodeEditor";
 import Sidebar from "./Sidebar";
 import QuestionBox from "./QuestionBox";
-import React from "react";
+import React, { useEffect } from "react";
 import SinglePage from "@layout/SinglePage";
 import Timer from "./Timer";
 import useEndTime from "../hooks/useEndTime";
 import EndModal from "./EndModal";
+import { toast } from "react-hot-toast";
 
 export default function Battlegrounds() {
   const [active] = useEndTime((state: any) => [state.active]);
+
+  useEffect(() => {
+    console.log("joined");
+    toast.success("You have joined the room!", {
+      style: {
+        padding: '16px',
+        color: '#0D0D0D',
+      },
+      iconTheme: {
+        primary: 'green',
+        secondary: '#FFFAEE',
+      },
+    });
+  },[])
 
   return (
     <Stack direction={"row"} position={"relative"}>

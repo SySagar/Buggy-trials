@@ -3,6 +3,7 @@ import { Stack, Typography } from "@mui/material";
 import ScrollToTop from "common/ScrollToTop";
 import AppTheme from "theme/appTheme";
 import Image from "next/image";
+import { Toaster } from "react-hot-toast";
 
 export default function BattleGroundsLayout({
   children,
@@ -13,6 +14,7 @@ export default function BattleGroundsLayout({
     <html lang="en">
       <AppTheme>
         <body>
+        <Toaster position="top-center"></Toaster>
           <Stack
             direction={"row"}
             position={"fixed"}
