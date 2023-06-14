@@ -21,6 +21,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import EditIcon from "@mui/icons-material/Edit";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import { Upload } from "@mui/icons-material";
+import useUserProfile from "../hooks/useUserProfile";
 
 interface profileTypes {
   username: string;
@@ -40,8 +41,13 @@ export default function Profile() {
     "Linux",
   ]);
   const username = usePathname().split("/")[2];
+  const [profile, setProfile] = useUserProfile((state) => [
+    state.user,
+    state.setUser,
+  ]);
   useEffect(() => {
     console.log(username);
+    setProfile({ username });
 
     try {
       const userProfileExist = async () => {
@@ -62,7 +68,7 @@ export default function Profile() {
     } catch (err) {
       console.log(err);
     }
-  }, [router, username]);
+  }, [router, setProfile, username]);
 
   const [checked, setChecked] = useState(true);
   const [userImage, setUserImage] = useState<string>("");
@@ -169,7 +175,7 @@ export default function Profile() {
           </Box>
         </Stack>
         <Stack position={"relative"} bottom={70} paddingLeft={5} gap={1}>
-          <Typography variant="h6">Amanda</Typography>
+          <Typography variant="h6">{profile.username}</Typography>
 
           <Typography variant="subtitle1">
             Full Stack developer | Competetive Programmer | Open Source
